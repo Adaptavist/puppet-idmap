@@ -1,5 +1,5 @@
 # idmap Module
-
+[![Build Status](https://travis-ci.org/Adaptavist/puppet-idmap.svg?branch=master)](https://travis-ci.org/Adaptavist/puppet-idmap)
 ## Overview
 
 The **idmap** configures the idmapper for NFSv4 domains.  If it has not already been installed the nfs utils OS package is installed as this contains the idmapper

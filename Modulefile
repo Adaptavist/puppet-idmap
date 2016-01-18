@@ -1,5 +1,5 @@
 name 'adaptavist/idmap'
-version '0.1.5'
+version '0.1.6'
 source 'https://github.com/Adaptavist/puppet-idmap.git'
 author 'mhope'
 summary 'IDMapper Module' 
