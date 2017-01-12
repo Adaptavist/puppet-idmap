@@ -15,7 +15,8 @@ describe 'idmap', :type => 'class' do
 
    let :facts do
       {
-        :osfamily => 'Debian'
+        :osfamily => 'Debian',
+        :operatingsystemrelease => '7'
       }
     end
 
@@ -49,7 +50,8 @@ describe 'idmap', :type => 'class' do
 
    let :facts do
       {
-        :osfamily => 'RedHat'
+        :osfamily => 'RedHat',
+        :operatingsystemrelease => '6.0'
       }
     end
 
@@ -75,7 +77,10 @@ describe 'idmap', :type => 'class' do
       { :nfsv4_domain => '' }
     end
     let :facts do
-      {  :osfamily => 'RedHat' }
+      {  
+        :osfamily => 'RedHat',
+        :operatingsystemrelease => '6.1'
+      }
     end
 
     it do
@@ -96,7 +101,8 @@ describe 'idmap', :type => 'class' do
 
    let :facts do
       {
-        :osfamily => 'Solaris'
+        :osfamily => 'Solaris',
+        :operatingsystemrelease => '7'
       }
     end
 

@@ -34,7 +34,7 @@ class idmap (
 
     #set OS specific variables
     case $::osfamily {
-        RedHat: {
+        'RedHat': {
             $idmap_nobody_group='nobody'
             $idmap_pipefs_dir='/var/lib/nfs/rpc_pipefs/'
             $nfs_package='nfs-utils'
@@ -51,7 +51,7 @@ class idmap (
                 $idmap_service='rpcidmapd'
             }
         }
-        Debian: {
+        'Debian': {
             $idmap_service='idmapd'
             $idmap_nobody_group='nogroup'
             $idmap_pipefs_dir='/run/rpc_pipefs/'
@@ -78,12 +78,12 @@ class idmap (
 
 
     #if the nfsv4 domain is set create /etc/idmapd.conf from the template and ensure the idmap service is running
-    if ($nfsv4_domain) {
+    if ($real_nfsv4_domain and $real_nfsv4_domain != '') {
 
         #if the nfs-pacakage resource has not been defined (can be done via autofs etc) install the packageas it includes idmapd
         if ! defined(Package[$nfs_package]) {
             package { $nfs_package :
-                ensure      => installed,
+                ensure => installed,
             }
         }
 
